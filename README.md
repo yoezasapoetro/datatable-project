@@ -14,9 +14,9 @@ Datatable API Json
 
 3. Database menggunakan SQLite
 
-		Pada file .env ubah variabel DB_CONNECTION yang bernilai **mysql** menjadi **sqlite**
-		
-    Buat file baru pada folder **database** dengan nama file **datatable.sqlite**
+	Pada file .env ubah variabel DB_CONNECTION yang bernilai **mysql** menjadi **sqlite**
+	
+	Buat file baru pada folder **database** dengan nama file **datatable.sqlite**
 
 4. Buka terminal 
     ```
