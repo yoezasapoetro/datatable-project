@@ -4,16 +4,19 @@ Datatable API Json
 ## Petunjuk Pemakaian
 
 1. Buka terminal pada folder root project
-
-```terminal
-$ composer install
-```
-Tunggu hingga proses install library selesai
+    ```
+    $ composer install
+    ```
+		
+    Tunggu hingga proses install library selesai
 
 2. Database menggunakan SQLite
 
-3. Buka terminal 
+    Buat file baru pada folder **database** dengan nama file **datatable.sqlite**
 
-```terminal
-$ php artisan serve
-```
+3. Buka terminal 
+    ```
+    $ php artisan migrate
+    $ php artisan db:seed
+    $ php artisan serve
+    ```
