@@ -10,11 +10,15 @@ Datatable API Json
 		
     Tunggu hingga proses install library selesai
 
-2. Database menggunakan SQLite
+2. Copy file .env.example dan rename menjadi .env
 
+3. Database menggunakan SQLite
+
+		Pada file .env ubah variabel DB_CONNECTION yang bernilai **mysql** menjadi **sqlite**
+		
     Buat file baru pada folder **database** dengan nama file **datatable.sqlite**
 
-3. Buka terminal 
+4. Buka terminal 
     ```
     $ php artisan migrate
     $ php artisan db:seed
