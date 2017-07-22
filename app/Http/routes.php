@@ -20,8 +20,8 @@ Route::post('/login', function() {
     if(auth()->attempt($credentials)) {
         return redirect()->intended('/');
     }
-    // return back();
-    dd(auth()->user());
+    return back();
+    // dd(auth()->user());
 });
 
 Route::group(['middleware' => 'auth'], function() {
