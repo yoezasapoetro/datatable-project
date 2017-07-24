@@ -117,7 +117,7 @@
                                     label: 'Save',
                                     className: 'btn-info btn-sm',
                                     callback: function() {
-                                        _this.putForm(d.id, $('form.editForm').serializeArray());
+                                        _this.putForm(d.id, $('form.editForm').serialize());
                                     }
                                 }
                             }
@@ -130,6 +130,7 @@
                 $.ajax({
                     url: apiUrl + '/' + id,
                     type: 'PUT',
+                    data: serializeData,
                     success: function(res) {
                         DataTable_Comments.draw();
                         bootbox.alert('[EDIT] Message From Server: ' + JSON.stringify(res));
