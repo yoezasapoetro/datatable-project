@@ -164,8 +164,9 @@
                             url: apiUrl + '/' + id,
                             type: 'DELETE',
                             success: function(r) {
-                                bootbox.alert('[DELETE] Message From Server: ' + JSON.stringify(r));
+                                // bootbox.alert('[DELETE] Message From Server: ' + JSON.stringify(r));
                                 target.remove();
+                                console.log('[DELETE] Message From Server: ' + JSON.stringify(r));
                             }
                         });
                     }
