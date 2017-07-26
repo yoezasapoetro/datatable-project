@@ -132,8 +132,9 @@
                     type: 'PUT',
                     data: serializeData,
                     success: function(res) {
-                        DataTable_Comments.draw();
-                        bootbox.alert('[EDIT] Message From Server: ' + JSON.stringify(res));
+                        DataTable_Comments.columns.adjust().draw();
+                        bootbox.alert('Success Edit Data #' + res.id);
+                        console.log('[EDIT] Message From Server: ' + JSON.stringify(res));
                     }
                 });
             }
