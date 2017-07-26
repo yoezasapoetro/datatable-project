@@ -85,7 +85,7 @@
                     { "data": "id",
                         "render": function(data, type, row, meta) {
                         return '<button type="button" class="btn btn-link btn-sm" onclick="editForm('+data+')" title="Edit"><i class="glyphicon glyphicon-pencil"></i></button>' + '&emsp;' +
-                        '<button type="button" class="btn btn-link btn-sm" onclick="destroy('+data+')" title="Hapus"><i class="glyphicon glyphicon-trash"></i></button>'
+                        '<button type="button" data-id="'+data+'" class="btn btn-link btn-sm" onclick="destroy('+data+', this)" title="Hapus"><i class="glyphicon glyphicon-trash"></i></button>'
                     } }
                 ],
                 "pagingType": "simple_numbers"
@@ -156,15 +156,16 @@
                 return _form;
             }
             
-            function destroy(id) {
+            function destroy(id, comp) {
+                var target = $(comp).closest('tr').get(0);
                 bootbox.confirm('Are You Sure', function(res) {
                     if(res == true) {
                         $.ajax({
                             url: apiUrl + '/' + id,
                             type: 'DELETE',
                             success: function(r) {
-                                DataTable_Comments.draw();
                                 bootbox.alert('[DELETE] Message From Server: ' + JSON.stringify(r));
+                                target.remove();
                             }
                         });
                     }
